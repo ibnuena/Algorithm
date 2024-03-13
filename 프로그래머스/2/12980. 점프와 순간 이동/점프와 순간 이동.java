@@ -2,14 +2,8 @@ import java.util.*;
 
 public class Solution {
     public int solution(int n) {
-        int ans = 0;
-        int usage = 0;
-        // 완전탐색,,?
-        // 맨처음엔 무조건 점프
         
-        ans = rec(n);
-        
-        return ans;
+        return rec(n);
     }
     
     public int rec(int n){

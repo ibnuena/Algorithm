@@ -15,12 +15,12 @@ class Solution {
             return;
         }
         
-        for(int i=0; i<2; i++){
-            if(i==0)
+        //for(int i=0; i<2; i++){
+           // if(i==0)
                 dfs(depth, start+1, target, numbers, total + numbers[start]);
-            else
+           // else
                 dfs(depth, start+1, target, numbers, total - numbers[start]);
-        }
+      //  }
             
     }
 }

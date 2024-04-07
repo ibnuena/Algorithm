@@ -17,32 +17,27 @@ public class Main {
         Arrays.sort(arr);
 
         int[] answer = new int[2];
-        int minAbsSum = Integer.MAX_VALUE;
+		int num = 2000000000;
 
         for (int i = 0; i < arr.length - 1; i++) {
-            int left = i + 1;
-            int right = arr.length - 1;
-
-            while (left <= right) {
-                int mid = (left + right) / 2;
-                int currentSum = arr[i] + arr[mid];
-                int currentAbsSum = Math.abs(currentSum);
-
-                if (currentAbsSum < minAbsSum) {
-                    minAbsSum = currentAbsSum;
+            int min = i + 1;
+            int max = arr.length - 1;
+            while (max >= min) {
+                int mid = (min + max) / 2;
+                if (Math.abs(arr[i] + arr[mid]) < Math.abs(num)) {
+                    num = arr[i] + arr[mid];
                     answer[0] = arr[i];
                     answer[1] = arr[mid];
                 }
-
-                if (currentSum < 0)
-                    left = mid + 1;
-                else if (currentSum > 0)
-                    right = mid - 1;
-                else
-                    break; // Found exact pair whose sum is 0
+                if ((arr[i] + arr[mid]) > 0) {
+                    max = mid - 1;
+                } else if ((arr[i] + arr[mid]) < 0) {
+                    min = mid + 1;
+                } else {
+                    break;
+                }
             }
         }
-
         System.out.println(answer[0] + " " + answer[1]);
     }
 }

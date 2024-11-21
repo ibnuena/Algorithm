@@ -24,9 +24,9 @@ class Solution {
                 close++;
             }
             
-            if(open == close){
-                open = close = 0;
-            }
+//             if(open == close){
+//                 open = close = 0;
+//             }
         }
         
         if(open != close)
